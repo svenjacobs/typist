@@ -44,7 +44,7 @@ const type = (
   const timeout = config.speed * variance
 
   window.setTimeout(() => {
-    onType(sentence.slice(0, index))
+    onType(sentence.slice(0, index + 1))
     if (index < sentence.length) {
       type(index + 1, sentence, onType, config)
     }
