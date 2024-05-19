@@ -7,14 +7,16 @@
   "scripts": {
     "clean": "rm -rf dist/*",
     "build": "pnpm run clean && tsc",
-    "watch": "tsc --watch",
+    "watch": "tsc --watch --preserveWatchOutput",
     "serve": "ws --static.index demo.html",
+    "dev": "concurrently \"pnpm run watch\" \"pnpm run serve\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sven Jacobs <mail@svenjacobs.com>",
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.6",
+    "concurrently": "^8.2.2",
     "local-web-server": "^5.3.3",
     "prettier": "^3.2.5",
     "typescript": "^5.4.5"
