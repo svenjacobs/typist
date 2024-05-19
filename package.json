@@ -1,0 +1,28 @@
+{
+  "name": "typist",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Fun library simulating human typing",
+  "main": "src/typist.ts",
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "build": "pnpm run clean && tsc",
+    "watch": "tsc --watch",
+    "serve": "ws --static.index demo.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sven Jacobs <mail@svenjacobs.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.6",
+    "local-web-server": "^5.3.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "pkgx": "pnpm@9",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "semi": false
+  }
+}

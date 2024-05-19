@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Typist Demo</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      body,
+      input {
+        color: darkslategray;
+      }
+
+      #title {
+        margin-top: 2em;
+        margin-bottom: 1em;
+      }
+
+      #search {
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+      }
+
+      #input {
+        border: none;
+        outline: none;
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Typist Demo</h1>
+
+    <div id="search">
+      🔍
+      <input type="text" id="input" size="50" />
+    </div>
+  </body>
+  <script type="module">
+    import typist, { inputAdapter } from './dist/typist.mjs'
+
+    const input = document.getElementById('input')
+    input.focus()
+
+    window.setTimeout(() => {
+      typist(
+        'Hello World! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at.',
+        inputAdapter(input),
+      )
+    }, 1000)
+  </script>
+</html>
